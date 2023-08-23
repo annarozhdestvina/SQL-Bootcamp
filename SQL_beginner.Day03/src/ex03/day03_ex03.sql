@@ -2,7 +2,7 @@ with cte_table as (select person.name as person_name, person.gender as gender, p
 join person_visits on person_visits.person_id = person.id
 join pizzeria on pizzeria.id = person_visits.pizzeria_id)
 
-select females.pizzeria_name from 
+select females.pizzeria_name from
 
 (select count(cte_table.gender), cte_table.pizzeria_name from cte_table
 where cte_table.gender = 'female'
