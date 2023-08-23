@@ -1,0 +1,36 @@
+
+-- cons1
+BEGIN TRANSACTION;
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SHOW TRANSACTION ISOLATION LEVEL;
+
+SELECT *
+FROM pizzeria;
+
+UPDATE pizzeria
+SET rating = 4.0
+WHERE name = 'Pizza Hut';
+
+COMMIT;
+
+SELECT *
+FROM pizzeria;
+
+------------------------------------
+
+-- cons2
+BEGIN TRANSACTION;
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SHOW TRANSACTION ISOLATION LEVEL;
+
+SELECT *
+FROM pizzeria;
+
+UPDATE pizzeria
+SET rating = 3.6
+WHERE name = 'Pizza Hut';
+
+COMMIT;
+
+SELECT *
+FROM pizzeria;
